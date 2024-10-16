@@ -8,8 +8,8 @@ import cookieParser from "cookie-parser";
 // routes
 import authRoutes from "./routes/authRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-// import matchRoutes from "./routes/matchRoutes.js";
-// import messageRoutes from "./routes/messageRoutes.js";
+import matchRoutes from "./routes/matchRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
 
 import { connectDB } from "./config/db.js";
 // import { initializeSocket } from "./socket/socket.server.js";
@@ -35,8 +35,8 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
-// app.use("/api/matches", matchRoutes);
-// app.use("/api/messages", messageRoutes);
+app.use("/api/matches", matchRoutes);
+app.use("/api/messages", messageRoutes);
 
 // if (process.env.NODE_ENV === "production") {
 // 	app.use(express.static(path.join(__dirname, "/client/dist")));
